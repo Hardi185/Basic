@@ -261,7 +261,7 @@ When you run an ASP.NET MVC application, IIS is responsible for:
 - **Serving static files:** IIS serves static files like CSS, JavaScript, and image files.
 - **Managing application lifecycle:** IIS starts and stops the application, handles requests, and ensures the web application runs smoothly.
 
-**NOTE:**
+## NOTE:
 - Action name(method name) and the view page regarding that should be of same name.
 - if method id Index(), view name should be View.cshtml.
 
