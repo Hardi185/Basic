@@ -7,7 +7,6 @@
 - **.NET Framework** → **.NET Core** → **.NET (Unified Platform)**
 - The platform has undergone significant transformations, with new versions and features added over time.
 
----
 
 ## .NET Core
 
@@ -25,7 +24,6 @@
 - **.NET Core 2.0**, **2.1** (2017-2018)
 - **.NET Core 3.0**, **3.1** (2019, LTS)
 
----
 
 ## .NET (Unified Platform)
 
@@ -53,7 +51,6 @@ ASP.NET is a web application framework developed by Microsoft to allow programme
 - Tools and libraries specifically for web development.
 - Integration with the .NET platform.
 
----
 
 ## ASP.NET Versions and Corresponding .NET Versions
 
