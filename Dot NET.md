@@ -84,7 +84,7 @@ ASP.NET is a web application framework developed by Microsoft to allow programme
 - Use MVC pattern for server-rendered pages or APIs.
 - Use it with Vue.js, Angular, or React for frontend decoupling.
   - Without microServices
-  - Without microServices
+  - With microServices
 
 ---
 
