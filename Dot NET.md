@@ -331,5 +331,118 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
+---
 
+## Decoupled Architecture using ASP.NET and Modern Frontend Frameworks
 
+In a decoupled architecture, the backend serves as an API layer that provides data and business logic. The frontend consumes these APIs to render the user interface dynamically. This separation allows independent development and flexibility in choosing technologies.
+
+### Key Benefits:
+- **Separation of Concerns:** Frontend and backend teams can work independently.
+- **Flexibility:** Switch frontend frameworks without affecting backend functionality.
+- **Scalability:** Backend APIs can be reused across multiple frontend applications.
+- **Support for SPAs:** Enables Single Page Applications (SPA) that provide a dynamic and responsive user experience.
+
+### Example Implementation
+
+### 1. Backend (ASP.NET Core - HomeController)
+The backend provides a REST API endpoint to serve data as JSON. Here's an example controller:
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+public class HomeController : Controller
+{
+    [HttpGet("/api/custom-view")]
+    public IActionResult GetCustomViewData()
+    {
+        var data = new { message = "Hello from the backend!" };
+        return Ok(data);  // Return data as JSON
+    }
+}
+```
+
+### 2. Frontend Examples
+The frontend can be implemented using popular frameworks like Vue.js, Angular, or React. These frameworks fetch data from the backend API and update the UI dynamically.
+
+#### a. Vue.js Example
+
+```html
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: ""
+    };
+  },
+  created() {
+    fetch("/api/custom-view")
+      .then((response) => response.json())
+      .then((data) => {
+        this.message = data.message;
+      });
+  }
+};
+</script>
+```
+
+#### b. Angular Example
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-home',
+  template: `<h1>{{ message }}</h1>`,
+})
+export class HomeComponent implements OnInit {
+  message: string;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<any>('/api/custom-view').subscribe(data => {
+      this.message = data.message;
+    });
+  }
+}
+```
+
+#### c. React Example
+
+```javascript
+import React, { useState, useEffect } from "react";
+
+function Home() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("/api/custom-view")
+      .then((response) => response.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+
+  return <h1>{message}</h1>;
+}
+
+export default Home;
+```
+
+## Architecture Flow
+
+### Flow Without Microservices
+1. **Frontend:** Sends HTTP requests to the backend API to fetch or send data.
+2. **Backend:** Processes requests, performs business logic, and interacts with the database.
+3. **API:** Acts as a mediator, exposing endpoints for frontend communication.
+
+### Flow With Microservices
+*Details will be updated soon.*
+
+---
