@@ -113,7 +113,9 @@ MVC Architecture Flow:
 Here’s a basic example of how an MVC-based ASP.NET Core application works.
 
 **Step 1: Create a Model**
+
 The Model represents the data structure. For example, let’s say we are building an application to manage Books.
+
 ```csharp
 // Models/Book.cs
 namespace MyMvcApp.Models
