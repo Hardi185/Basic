@@ -446,3 +446,8 @@ export default Home;
 *Details will be updated soon.*
 
 ---
+
+## Extension methods in C#
+
+Please refer this:
+[Extension methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
