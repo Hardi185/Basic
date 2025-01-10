@@ -234,6 +234,111 @@ public class Customer
 }
 ```
 
+## LINQ Joins in C#
+
+LINQ (Language Integrated Query) supports various types of joins, allowing you to combine data from multiple collections or data sources. This document provides examples and explanations for the following join types:
+
+1. **Inner Join**
+2. **Left Outer Join**
+3. **Right Outer Join** (Simulated)
+4. **Full Outer Join** (Simulated)
+5. **Cross Join**
+
+### 1. Inner Join
+Combines records from two sequences where there is a matching key in both.
+
+#### Example:
+```csharp
+var innerJoin = from customer in customers
+                join order in orders on customer.Id equals order.CustomerId
+                select new { customer.Name, order.OrderDate };
+
+foreach (var item in innerJoin)
+{
+    Console.WriteLine($"{item.Name} placed an order on {item.OrderDate}");
+}
+```
+
+### 2. Left Outer Join
+Includes all records from the left sequence and matches from the right sequence. If there’s no match, the result includes `null` for the right-side elements.
+
+#### Example:
+```csharp
+var leftJoin = from customer in customers
+               join order in orders on customer.Id equals order.CustomerId into customerOrders
+               from order in customerOrders.DefaultIfEmpty() // Ensures null when no match
+               select new { customer.Name, OrderDate = order?.OrderDate };
+
+foreach (var item in leftJoin)
+{
+    Console.WriteLine($"{item.Name} placed an order on {item.OrderDate ?? "No Orders"}");
+}
+```
+
+### 3. Right Outer Join
+LINQ does not natively support right joins, but you can simulate them by reversing the left join logic.
+
+#### Example:
+```csharp
+var rightJoin = from order in orders
+                join customer in customers on order.CustomerId equals customer.Id into orderCustomers
+                from customer in orderCustomers.DefaultIfEmpty()
+                select new { OrderDate = order.OrderDate, CustomerName = customer?.Name };
+
+foreach (var item in rightJoin)
+{
+    Console.WriteLine($"Order on {item.OrderDate} by {item.CustomerName ?? "Unknown Customer"}");
+}
+```
+
+### 4. Full Outer Join
+Includes all records from both sequences. If no match is found, null values are included for non-matching elements. LINQ requires a combination of left and right joins to simulate a full outer join.
+
+#### Example:
+```csharp
+var fullOuterJoin = 
+    (from customer in customers
+     join order in orders on customer.Id equals order.CustomerId into customerOrders
+     from order in customerOrders.DefaultIfEmpty()
+     select new { customer.Name, OrderDate = order?.OrderDate })
+    .Union(
+     from order in orders
+     join customer in customers on order.CustomerId equals customer.Id into orderCustomers
+     from customer in orderCustomers.DefaultIfEmpty()
+     select new { Name = customer?.Name, OrderDate = order.OrderDate });
+
+foreach (var item in fullOuterJoin)
+{
+    Console.WriteLine($"{item.Name ?? "Unknown Customer"} - {item.OrderDate ?? "No Order"}");
+}
+```
+
+### 5. Cross Join
+Returns the Cartesian product of two sequences. LINQ doesn't have a direct cross-join operator, but you can achieve it using `from ... in` syntax.
+
+#### Example:
+```csharp
+var crossJoin = from customer in customers
+                from order in orders
+                select new { customer.Name, order.OrderDate };
+
+foreach (var item in crossJoin)
+{
+    Console.WriteLine($"{item.Name} - {item.OrderDate}");
+}
+```
+
+### Summary of Joins in LINQ
+
+| Join Type       | LINQ Support | Special Notes                      |
+|-----------------|--------------|------------------------------------|
+| Inner Join      | Directly supported | `join ... on ... equals ...`      |
+| Left Outer Join | Supported    | Use `DefaultIfEmpty()`             |
+| Right Outer Join| Simulated    | Reverse the left join logic        |
+| Full Outer Join | Simulated    | Combine left join and right join with `Union` |
+| Cross Join      | Supported    | Use `from ... in` for Cartesian product |
+
+
 ---
 
 ## Advantages of LINQ
