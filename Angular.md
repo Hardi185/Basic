@@ -366,3 +366,200 @@ A service in Angular is a class that provides specific functionality or logic th
    ```
 
 ---
+
+## Observables and `subscribe()`
+
+### Understanding Observables
+Observables in Angular are like a YouTube channel:
+- **Observable**: The channel keeps emitting new videos (data).
+- **Subscriber**: You subscribe to the channel to get updates (like observing the data).
+- **Notification**: Hitting the bell icon ensures you get notified (using `subscribe()` in Angular).
+
+So any time data is read, observable will add it in that stream, any new data or modification will directly be added to stream, and if we’ve subscribed that already, the block of code inside that will run every time.
+
+### Why Use Observables for HTTP Requests in Angular?
+HTTP requests are asynchronous, and Observables allow efficient handling of responses:
+- **Asynchronous**: Emit values when data is available.
+- **Lazy**: Start emitting values only when subscribed.
+- **Composable**: Combine, filter, and transform using RxJS operators.
+
+### `subscribe()` Arguments
+- **Next**: Handles each emitted value.
+- **Error**: Handles errors during emission.
+- **Complete**: Executes when the Observable completes.
+
+#### Observable Flow:
+- **Creation:** The getData() method creates an Observable that will emit the HTTP response.
+- **Subscription:** The component subscribes to the Observable to receive the HTTP data.
+
+
+### Example
+```typescript
+// Service method returning an Observable
+getData(): Observable<any> {
+  return this.http.get('https://api.example.com/data');
+}
+
+// Component calling getData() and subscribing to the Observable
+this.dataService.getData().subscribe(
+  response => {
+    this.data = response; // Handle emitted data
+  },
+  error => {
+    console.error('An error occurred:', error); // Handle errors
+  },
+  () => {
+    console.log('Data fetching completed'); // Handle completion
+  }
+);
+```
+
+### Data Emission with Modifications or Changes
+- Observable emits data whenever there is an update.
+- For example, if you are tracking a list of users, and new users are added or existing users are modified in the backend, every time the data changes, the Observable emits the new data.
+- If the Observable is "listening" to this stream, it will notify the subscriber (via subscribe()), and the subscriber’s callback will run.
+
+---
+
+## Two-Way Data Binding
+Two-way data binding synchronizes data between the component class and the view (template). This ensures data flows in both directions.
+
+### How It Works
+1. **Component to View (Property Binding)**: When a property in the component changes, that change is reflected in the view. This happens through `property binding` (one-way data flow).
+2. **View to Component (Event Binding)**: When the user interacts with the view (e.g., input changes), that change is reflected in the component. This happens through ` event binding` (one-way data flow from the view to the component).
+   
+### Example
+**Component (TypeScript):**
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-name-input',
+  templateUrl: './name-input.component.html',
+  styleUrls: ['./name-input.component.css']
+})
+export class NameInputComponent {
+  name: string = ''; // Property bound to the input field
+}
+```
+
+**Template (HTML):**
+```html
+<!-- Two-way data binding using ngModel -->
+<input [(ngModel)]="name" placeholder="Enter your name">
+<p>Your name is: {{ name }}</p>
+```
+
+### Explanation
+1. **Initial Value**: `name` starts as an empty string.
+2. **Property Binding**: Updates the input field when `name` changes.
+3. **Event Binding**: Updates `name` when the user types in the input field.
+
+---
+
+## AngularJS vs Angular
+
+AngularJS is a JavaScript-based framework developed by Google for building dynamic single-page web applications (SPAs)
+
+| **Feature**            | **AngularJS**                            | **Angular (2+)**                                   |
+|-------------------------|------------------------------------------|---------------------------------------------------|
+| **Language**           | JavaScript                              | TypeScript (superset of JavaScript)              |
+| **Architecture**       | MVC (Model-View-Controller)             | Component-based architecture                     |
+| **Data Binding**       | Two-way data binding                    | Supports two-way data binding, but is more efficient |
+| **Dependency Injection** | Basic DI system                        | Advanced and more flexible DI system             |
+| **Routing**            | Uses `ngRoute` for routing              | Uses `@angular/router` with advanced features like lazy loading |
+| **Performance**        | Slower, especially for larger apps      | Faster due to optimizations like AOT compilation and better change detection |
+| **Mobile Support**     | Limited mobile support                  | Improved mobile support and optimized for performance |
+| **Directives**         | Heavy use of directives (e.g., `ng-model`) | Less reliance on directives, focused on components |
+| **Version Support**    | Only one version (1.x)                  | Continually updated with new versions (Angular 2, 4, 5, 6, etc.) |
+| **Development Speed**  | Slower (due to legacy features)         | Faster, thanks to Angular CLI and modern tooling |
+| **Testability**        | Testable but more complex               | Improved testability with better structure and TypeScript |
+| **Learning Curve**     | Easier for beginners (less structure)   | Steeper learning curve due to TypeScript and component-based design |
+| **Mobile and Desktop Apps** | Not optimized for mobile            | Fully optimized for mobile (PWA) and desktop apps |
+
+---
+
+## Dependency Injection
+Dependency Injection (DI) decouples components and services in Angular, providing a scalable architecture.
+
+DI helps decouple components and services. The component does not need to know how to create or manage the service; it just needs to rely on the injected dependency.
+
+### How DI Works
+1. **Define a Dependency**: Create a service.
+2. **Provide the Dependency**: You register this dependency in Angular’s dependency injection system (either globally in the root or at a module level).
+3. **Inject the Dependency**: Angular automatically injects the dependency into a class that needs it, usually via the constructor.
+
+### Example
+**Creating a Service:**
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // Service available globally
+})
+export class UserService {
+  getUserInfo() {
+    return { name: 'John Doe', age: 30 };
+  }
+}
+```
+
+**Injecting the Service:**
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
+
+@Component({
+  selector: 'app-user-profile',
+  template: `<h1>{{ userInfo.name }}</h1>`
+})
+export class UserProfileComponent implements OnInit {
+  userInfo: any;
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit() {
+    this.userInfo = this.userService.getUserInfo();
+  }
+}
+```
+
+**How Dependency Injection Works:**
+- When UserProfileComponent is created, Angular's DI system automatically provides an instance of UserService and injects it into the constructor.
+- You don't need to manually create an instance of UserService (e.g., new UserService()). Angular handles that for you.
+
+
+### Injector Scopes
+1. **Root Injector**: Singleton, shared across the application.
+2. **Module Injector**: Scoped to a specific module.
+3. **Component Injector**: Scoped to a specific component and its children.
+
+**Providing at Different Levels:**
+- **Global (Root):**
+  ```typescript
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class GlobalService { }
+  ```
+- **Module-Level:**
+  ```typescript
+  @NgModule({
+    providers: [ModuleService]
+  })
+  export class SomeModule { }
+  ```
+- **Component-Level:**
+  ```typescript
+  @Component({
+    selector: 'app-user-profile',
+    providers: [UserProfileService]
+  })
+  export class UserProfileComponent { }
+  ```
+  
+---
+
+
+  
+  
