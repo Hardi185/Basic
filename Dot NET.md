@@ -451,3 +451,10 @@ export default Home;
 
 Please refer this:
 [Extension methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)
+
+---
+
+## EF as ORM for .NET application:
+
+Please refer this:
+[Entity framework](https://github.com/Hardi185/Basic/blob/main/Entity%20framework.md)
