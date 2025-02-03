@@ -23,12 +23,22 @@ Summary: With a library (React), you control when functions are called and organ
 With a framework (Angular), the framework defines the structure and controls much of the flow, calling your code at predetermined points.
 
 ## When to Use Angular
+
+````yaml
+Large, complex, scalable, organised.
+`````
+
 - You’re building a large-scale enterprise application.
 - Your team prefers a structured, opinionated framework.
 - You want built-in tools and less reliance on third-party libraries.
 - You need long-term support and stability.
 
 ## When to Use React
+
+```yaml
+Flexibal, dynamic UI focused, lightweight.
+````
+
 - You need flexibility to choose your own tools and libraries.
 - You’re building a dynamic, high-performance UI.
 - Your team values a simpler learning curve and faster development.
