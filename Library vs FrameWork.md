@@ -25,7 +25,7 @@ With a framework (Angular), the framework defines the structure and controls muc
 ## When to Use Angular
 
 ````yaml
-Large, complex, scalable, organised.
+Large, complex, scalable, organized.
 `````
 
 - You’re building a large-scale enterprise application.
