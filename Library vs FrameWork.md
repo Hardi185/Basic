@@ -36,7 +36,7 @@ Large, complex, scalable, organised.
 ## When to Use React
 
 ```yaml
-Flexibal, dynamic UI focused, lightweight.
+Flexible, dynamic UI focused, lightweight.
 ````
 
 - You need flexibility to choose your own tools and libraries.
