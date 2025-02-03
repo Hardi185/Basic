@@ -1,4 +1,4 @@
-## Library Example (React):
+# Library Example (React):
 
 Imagine you’re building a house, and you have a toolbox full of tools (like a hammer, saw, and screwdriver).
 - You decide which tool to use, when to use it, and in what order to work on tasks.
@@ -39,7 +39,7 @@ export default Counter;
 
 ------
 
-## Framework Example (Angular):
+# Framework Example (Angular):
 
 Now, imagine you’re working with a house-building kit. This kit includes all the parts (walls, roof, floors), and it also comes with a detailed instruction manual that tells you exactly how to put the house together.
 - The kit provides a predefined structure, so you follow specific steps to assemble the house.
