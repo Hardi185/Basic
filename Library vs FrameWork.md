@@ -107,23 +107,12 @@ export class AppModule { }
 - We must follow Angular’s way of defining components, binding data, and using dependency injection.
 - Everything is managed within Angular's ecosystem.
 
----
-
-### **Key Differences:**
-- **React:** Flexible, choose your own structure, library-based.
-- **Angular:** Opinionated, enforces architecture, framework-based.
-
-**Summary:** With a library (React), you control when functions are called and organize the app structure. 
-With a framework (Angular), the framework defines the structure and controls much of the flow, calling your code at predetermined points.
-
-Choose React for flexibility and Angular for a structured development environment. 🚀
-
 ----
 
 ## When to Use Angular
 
 ````yaml
-Large, complex, scalable, organized.
+Large, complex, scalable, organized, enforces architecture.
 `````
 
 - You’re building a large-scale enterprise application.
@@ -134,7 +123,7 @@ Large, complex, scalable, organized.
 ## When to Use React
 
 ```yaml
-Flexible, dynamic UI focused, lightweight.
+Flexible, dynamic UI focused, lightweight, choose your own structure.
 ````
 
 - You need flexibility to choose your own tools and libraries.
