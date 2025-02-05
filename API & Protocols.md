@@ -15,7 +15,9 @@ Takes request sends to server, takes the response sends to client.
 - Example: REST APIs (Representational State Transfer) are stateless.
 - Benefits:
   ✔ Scalable, as each request is independent.
+  
   ✔ Easier to cache responses.
+  
   ✔ More resilient to failures.
 
 - Example of a Stateless API (RESTful API Request)
