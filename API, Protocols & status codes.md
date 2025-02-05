@@ -5,7 +5,7 @@
     - [Types of APIs](#types-of-apis)
     - [Different API Protocols](#different-api-protocols)
     
-2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https---key-differences--security)
+2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https-key-differences-security)
 
 3. [Common HTTP Response Status Codes Returned by APIs](#common-http-response-status-codes-returned-by-apis)
 
@@ -98,6 +98,8 @@ POST /login
 ---------------------------------------------------------------------------------------------------------
 
 ## 🌐 HTTP vs HTTPS - Key Differences & Security
+<a name="http-vs-https-key-differences-security"></a>
+
 
 The main difference between **HTTP (HyperText Transfer Protocol)** and **HTTPS (HyperText Transfer Protocol Secure)** is **security**. HTTPS provides encrypted communication using **SSL/TLS**, making it more secure than HTTP.
 
