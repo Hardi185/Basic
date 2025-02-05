@@ -19,9 +19,9 @@ API (Application Programming Interface) is a set of rules and protocols that all
 
 - GraphQL API
 
-- Allows clients to request only the data they need.
-- More efficient than REST (reduces over-fetching of data).
-- Used by Facebook, GitHub, and modern web apps.
+  - Allows clients to request only the data they need.
+  - More efficient than REST (reduces over-fetching of data).
+  - Used by Facebook, GitHub, and modern web apps.
 
 - WebSocket API
 
@@ -29,38 +29,49 @@ API (Application Programming Interface) is a set of rules and protocols that all
   - Used for chat applications, live stock updates, gaming, etc.
   - Faster than REST for real-time data transfer.
 
+## Different API Protocols
 
 ![Protocol](https://github.com/user-attachments/assets/e0091b70-d47e-465e-beb4-4fb67871da57)
 
 ---------------------------------------------------------------------------------------------------------
 
-The main difference between HTTP (HyperText Transfer Protocol) and HTTPS (HyperText Transfer Protocol Secure) is security.
+## 🌐 HTTP vs HTTPS - Key Differences & Security
 
-🔹 Key Differences Between HTTP and HTTPS
+The main difference between **HTTP (HyperText Transfer Protocol)** and **HTTPS (HyperText Transfer Protocol Secure)** is **security**. HTTPS provides encrypted communication using **SSL/TLS**, making it more secure than HTTP.
 
-- Feature	HTTP	HTTPS
-- Security	Not secure	Secure (uses SSL/TLS encryption)
-- Data Encryption	No encryption (data is sent as plain text)	Uses SSL/TLS to encrypt data
-- Data Integrity	Data can be modified by attackers (MITM attacks)	Prevents data tampering
-- Authentication	No identity verification	Uses SSL certificates to verify server identity
-- Port Used	Port 80	Port 443
-Performance	Faster (no encryption overhead)	Slightly slower due to encryption but optimized with HTTP/2
-🔹 How HTTPS is More Secure?
-Encryption 🔒
 
-HTTPS encrypts data using SSL/TLS, preventing hackers from stealing sensitive information (passwords, credit card details, etc.).
-Data Integrity 🛡
+### 🔹 Key Differences Between HTTP and HTTPS
 
-Ensures that data is not altered or corrupted during transfer.
-Detects if someone tries to modify the data in transit.
-Authentication ✅
+| Feature          | HTTP  | HTTPS  |
+|-----------------|------|--------|
+| **Security**    | ❌ Not secure | ✅ Secure (uses SSL/TLS encryption) |
+| **Data Encryption** | ❌ No encryption (plain text data) | ✅ Encrypted with SSL/TLS |
+| **Data Integrity** | ❌ Can be modified (MITM attacks) | ✅ Prevents data tampering |
+| **Authentication** | ❌ No identity verification | ✅ Uses SSL certificates for verification |
+| **Port Used** | 80 | 443 |
+| **Performance** | ⚡ Faster (no encryption overhead) | 🛡 Slightly slower due to encryption but optimized with HTTP/2 |
 
-Uses SSL certificates to verify the website's authenticity.
-Helps prevent phishing attacks by ensuring users connect to the correct server.
-SEO and Trust 🌍
 
-Google ranks HTTPS websites higher in search results.
-Users trust HTTPS sites more (padlock icon in browser).
-When to Use HTTP vs. HTTPS?
-✔ Use HTTP for public, non-sensitive content (e.g., blogs, news).
-✔ Use HTTPS for secure communication (e.g., login pages, payment sites, confidential data transfer).
+### 🔹 How HTTPS is More Secure?
+
+#### 🔒 **Encryption**  
+HTTPS encrypts data using **SSL/TLS**, preventing hackers from stealing sensitive information (e.g., passwords, credit card details).  
+
+#### 🛡 **Data Integrity**  
+- Ensures that data is not altered or corrupted during transfer.  
+- Detects if someone attempts to modify data in transit.  
+
+#### ✅ **Authentication**  
+- Uses **SSL certificates** to verify the website’s authenticity.  
+- Prevents phishing attacks by ensuring users connect to the correct server.  
+
+#### 🌍 **SEO & Trust**  
+- Google ranks HTTPS websites **higher** in search results.  
+- Users trust HTTPS sites more (padlock icon 🔒 in the browser).  
+
+
+### 🔹 When to Use HTTP vs. HTTPS?
+
+✔ **Use HTTP** for **public, non-sensitive content** (e.g., blogs, news).  
+✔ **Use HTTPS** for **secure communication** (e.g., login pages, payment processing, confidential data transfer).  
+
