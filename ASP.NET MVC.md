@@ -1,9 +1,10 @@
 ASP.NET MVC (Model-View-Controller) is a web application framework developed by Microsoft, allowing developers to build dynamic, data-driven websites. Unlike ASP.NET Web Forms, which is event-driven, ASP.NET MVC provides a clear separation of concerns by dividing an application into three components: Model, View, and Controller.
 Here's a comprehensive breakdown of ASP.NET MVC, including folder structure, flow, versions, and a simple example:
+
+
 1. Folder Architecture
 The typical folder structure for an ASP.NET MVC application looks like this:
-lua
-CopyEdit
+````yaml
 /App_Data              --> Stores application data like database files
 /Content               --> Contains static files like CSS, images, and other assets
 /Controllers           --> Contains controller classes that handle HTTP requests
@@ -13,6 +14,8 @@ CopyEdit
 /Global.asax           --> Application-level events and configuration
 /Packages.config       --> References to NuGet packages
 /Web.config            --> Configurations for the application (like routing, authentication, etc.)
+````
+
 2. Flow of Execution
 The flow of an ASP.NET MVC application involves these steps:
 1.	Request: A user requests a specific URL (e.g., http://localhost/Home/Index).
@@ -21,6 +24,7 @@ The flow of an ASP.NET MVC application involves these steps:
 4.	Model: The Model is responsible for representing data and business logic. The controller interacts with the model to fetch, save, or manipulate data.
 5.	View: After processing, the controller returns a View (usually a .cshtml file) to display data or content to the user.
 6.	Response: The View is rendered as HTML and returned as the HTTP response to the browser.
+   
 3. ASP.NET MVC Versions
 ASP.NET MVC has multiple versions. Below is a breakdown of key versions:
 •	ASP.NET MVC 1 (Released in 2009): The first version introduced basic MVC architecture.
@@ -29,6 +33,7 @@ ASP.NET MVC has multiple versions. Below is a breakdown of key versions:
 •	ASP.NET MVC 4 (2012): Improved support for mobile web apps, introduced Web API.
 •	ASP.NET MVC 5 (2013): Introduced features like attribute routing, filters, and improved authentication support.
 ASP.NET MVC is different from ASP.NET Core MVC, which is a cross-platform framework. The following discussion is about ASP.NET MVC, not the Core version.
+
 4. Starting an ASP.NET MVC Project
 To start an ASP.NET MVC project, follow these steps:
 1.	Create a New Project:
@@ -39,10 +44,10 @@ o	Choose the MVC template.
 o	You will see a basic template with HomeController, Views, and Models.
 3.	Code Example:
 Basic Example of ASP.NET MVC
-Controller
+- Controller
 Controllers handle user input and decide which View to render. Here's a simple HomeController.
-csharp
-CopyEdit
+
+````csharp
 using System.Web.Mvc;
 
 namespace MyMvcApp.Controllers
@@ -64,9 +69,12 @@ namespace MyMvcApp.Controllers
         }
     }
 }
+````
+
 View
 Views render HTML and content that the user sees. Views are usually .cshtml files. Here's a basic Index.cshtml:
-html
+````cshtml
+
 CopyEdit
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -97,10 +105,12 @@ CopyEdit
     </div>
 </body>
 </html>
+````
+
 Model
 Models are used to represent application data. Here's a simple Product model.
-csharp
-CopyEdit
+````csharp
+
 namespace MyMvcApp.Models
 {
     public class Product
@@ -110,10 +120,12 @@ namespace MyMvcApp.Models
         public decimal Price { get; set; }
     }
 }
+````
+
 Global.asax
 Global.asax is used for application-level events, such as configuring routing.
-csharp
-CopyEdit
+````csharp
+
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -129,10 +141,12 @@ namespace MyMvcApp
         }
     }
 }
+`````
+
 RouteConfig
 By default, RouteConfig is configured to map requests to controllers and actions.
-csharp
-CopyEdit
+````csharp
+
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -152,10 +166,11 @@ namespace MyMvcApp
         }
     }
 }
+````
+
 Web.config
 The Web.config file is used to configure application settings like authentication, routing, and more.
-xml
-CopyEdit
+````yaml
 <configuration>
   <system.web>
     <compilation targetFramework="4.8" />
@@ -165,6 +180,8 @@ CopyEdit
     </authorization>
   </system.web>
 </configuration>
+````
+
 5. Conclusion
 •	ASP.NET MVC is a powerful framework that offers a clean separation of concerns (model, view, controller).
 •	Controller handles user requests and returns Views.
