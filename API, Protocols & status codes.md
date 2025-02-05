@@ -5,7 +5,7 @@
     - [Types of APIs](#types-of-apis)
     - [Different API Protocols](#different-api-protocols)
     
-2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https-key-differences-security)
+2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https---key-differences--security)
 
 3. [Common HTTP Response Status Codes Returned by APIs](#common-http-response-status-codes-returned-by-apis)
 
