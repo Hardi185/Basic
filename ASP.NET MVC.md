@@ -6,6 +6,7 @@ Here's a comprehensive breakdown of ASP.NET MVC, including folder structure, flo
 The typical folder structure for an ASP.NET MVC application looks like this:
 ````yaml
 /App_Data              --> Stores application data like database files
+/App_Start         (Contains configuration files such as RouteConfig.cs, BundleConfig.cs)
 /Content               --> Contains static files like CSS, images, and other assets
 /Controllers           --> Contains controller classes that handle HTTP requests
 /Models                --> Contains model classes that represent application data
