@@ -1,4 +1,26 @@
-# What is an API?
+# Table of Contents
+
+1. [What is an API?](#what-is-an-api)
+    - [Stateless vs Stateful APIs](#stateless-vs-stateful-apis)
+    - [Types of APIs](#types-of-apis)
+    - [Different API Protocols](#different-api-protocols)
+    
+2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https---key-differences--security)
+    - [Key Differences Between HTTP and HTTPS](#key-differences-between-http-and-https)
+    - [How HTTPS is More Secure?](#how-https-is-more-secure)
+    - [When to Use HTTP vs HTTPS?](#when-to-use-http-vs-https)
+
+3. [Common HTTP Response Status Codes Returned by APIs](#common-http-response-status-codes-returned-by-apis)
+    - [1xx – Informational Responses](#1xx--informational-responses)
+    - [2xx – Success Responses](#2xx--success-responses)
+    - [3xx – Redirection Responses](#3xx--redirection-responses)
+    - [4xx – Client Errors](#4xx--client-errors)
+    - [5xx – Server Errors](#5xx--server-errors)
+
+
+-------------------------------------------------------------------------------------
+
+## What is an API?
 
 API (Application Programming Interface) is a set of rules and protocols that allow different software applications to communicate with each other. 
 ```yaml
