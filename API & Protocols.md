@@ -6,6 +6,46 @@ Think of it like a intermediate between client & server.
 Takes request sends to server, takes the response sends to client.
 ```
 
+- APIs can be either stateless or stateful, depending on how they manage client-server interactions.
+
+1️⃣ Stateless APIs (Most Common)
+
+- The server does not store any client-specific session data.
+- Each request from the client must contain all necessary information (e.g., authentication tokens, parameters).
+- Example: REST APIs (Representational State Transfer) are stateless.
+- Benefits:
+  ✅ Scalable, as each request is independent.
+  ✅ Easier to cache responses.
+  ✅ More resilient to failures.
+
+- Example of a Stateless API (RESTful API Request)
+
+````yaml
+GET /user/123
+Authorization: Bearer <token>
+````
+
+- The server processes this request without remembering past interactions.
+
+2️⃣ Stateful APIs
+
+- The server stores client session data between requests.
+- The client must maintain the same session (e.g., cookies, session IDs).
+- Example: SOAP APIs (Simple Object Access Protocol) and WebSockets.
+- Use cases: Banking transactions, real-time applications, multi-step processes.
+- Example of a Stateful API (Session-Based Login)
+
+````yaml
+POST /login
+{
+  "username": "user123",
+  "password": "mypassword"
+}
+````
+
+- The server responds with a session ID that must be used in future requests.
+
+
 ## Types of APIs
 
 - REST API (Representational State Transfer)
