@@ -1,21 +1,13 @@
 # Table of Contents
 
 1. [What is an API?](#what-is-an-api)
-    - [Stateless vs Stateful APIs](#stateless-vs-stateful-apis)
+    - [Stateless vs Stateful APIs](#Stateless-vs-Stateful-APIs)
     - [Types of APIs](#types-of-apis)
     - [Different API Protocols](#different-api-protocols)
     
 2. [HTTP vs HTTPS - Key Differences & Security](#http-vs-https---key-differences--security)
-    - [Key Differences Between HTTP and HTTPS](#key-differences-between-http-and-https)
-    - [How HTTPS is More Secure?](#how-https-is-more-secure)
-    - [When to Use HTTP vs HTTPS?](#when-to-use-http-vs-https)
 
 3. [Common HTTP Response Status Codes Returned by APIs](#common-http-response-status-codes-returned-by-apis)
-    - [1xx – Informational Responses](#1xx--informational-responses)
-    - [2xx – Success Responses](#2xx--success-responses)
-    - [3xx – Redirection Responses](#3xx--redirection-responses)
-    - [4xx – Client Errors](#4xx--client-errors)
-    - [5xx – Server Errors](#5xx--server-errors)
 
 
 -------------------------------------------------------------------------------------
@@ -28,6 +20,7 @@ Think of it like a intermediate between client & server.
 Takes request sends to server, takes the response sends to client.
 ```
 
+## Stateless vs Stateful APIs
 - APIs can be either stateless or stateful, depending on how they manage client-server interactions.
 
 1️⃣ Stateless APIs (Most Common)
