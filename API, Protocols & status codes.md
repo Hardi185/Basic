@@ -122,3 +122,48 @@ HTTPS encrypts data using **SSL/TLS**, preventing hackers from stealing sensitiv
 ✔ **Use HTTP** for **public, non-sensitive content** (e.g., blogs, news).  
 ✔ **Use HTTPS** for **secure communication** (e.g., login pages, payment processing, confidential data transfer).  
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Common HTTP Response Status Codes Returned by APIs
+
+When an API responds to a request, it includes an HTTP status code to indicate the outcome. Here are the most commonly used response codes:
+
+### ✅ 1xx – Informational Responses (Rarely Used)
+| Code | Meaning | Description |
+|------|---------|-------------|
+| **100** | Continue | Server received request headers and client should proceed. |
+| **101** | Switching Protocols | Server is switching protocols (e.g., HTTP to WebSocket). |
+
+### ✅ 2xx – Success Responses
+| Code | Meaning | Description |
+|------|---------|-------------|
+| **200** | OK | Request was successful, and response contains data. |
+| **201** | Created | Resource was successfully created (e.g., after `POST`). |
+| **202** | Accepted | Request was accepted for processing but not yet completed. |
+| **204** | No Content | Request succeeded, but no response body is returned. |
+
+### ⚠️ 3xx – Redirection Responses
+| Code | Meaning | Description |
+|------|---------|-------------|
+| **301** | Moved Permanently | Resource URL has changed permanently. |
+| **302** | Found | Temporary redirection to another URL. |
+| **304** | Not Modified | Resource hasn’t changed (used for caching). |
+
+### ⛔ 4xx – Client Errors
+| Code | Meaning | Description |
+|------|---------|-------------|
+| **400** | Bad Request | Request is invalid (e.g., missing parameters, incorrect format). |
+| **401** | Unauthorized | Authentication is required but missing or invalid. |
+| **403** | Forbidden | Client is authenticated but doesn’t have permission. |
+| **404** | Not Found | Requested resource doesn’t exist. |
+| **405** | Method Not Allowed | HTTP method (`GET`, `POST`, etc.) is not allowed on this endpoint. |
+| **409** | Conflict | Request conflicts with the current state (e.g., duplicate resource). |
+| **429** | Too Many Requests | Rate limiting: Client has sent too many requests. |
+
+### ❌ 5xx – Server Errors
+| Code | Meaning | Description |
+|------|---------|-------------|
+| **500** | Internal Server Error | Generic error when something goes wrong on the server. |
+| **502** | Bad Gateway | Server received an invalid response from an upstream service. |
+| **503** | Service Unavailable | Server is temporarily unavailable (e.g., overloaded, maintenance). |
+| **504** | Gateway Timeout | Server didn’t receive a response from an upstream service in time. |
