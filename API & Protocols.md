@@ -1,6 +1,9 @@
 # What is an API?
 
-API (Application Programming Interface) is a set of rules and protocols that allow different software applications to communicate with each other. APIs define the methods and data formats that applications can use to request and exchange information.
+API (Application Programming Interface) is a set of rules and protocols that allow different software applications to communicate with each other. 
+```yaml
+Think of it like a intermediate between client & server.
+```
 
 ## Types of APIs
 
