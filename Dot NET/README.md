@@ -3,6 +3,22 @@
 ## What is .NET Framework?
 .NET is a free, open- source developer platform created by Microsoft for building various types of applications. With .NET, developers can use multiple programming languages, editors, and libraries to create applications for web, mobile, desktop, games, and IoT. Initially released in the early 2000s, .NET has evolved into a versatile platform with a wide range of tools, frameworks, and languages.
 
+## .NET Frameworks and Their Uses
+
+| Framework | Purpose | Used For |
+|-----------|---------|----------|
+| **ASP.NET** | Web Development | Websites, Web APIs, Web Apps |
+| **Blazor** | Web UI Framework | Interactive Web Apps with C# instead of JavaScript |
+| **WinForms** | Desktop UI | Windows Desktop Applications |
+| **WPF (Windows Presentation Foundation)** | Desktop UI | Modern Windows Applications with XAML |
+| **MAUI (.NET Multi-platform App UI)** | Cross-Platform UI | Mobile and Desktop Apps (Windows, macOS, Android, iOS) |
+| **.NET MAUI Blazor** | Hybrid Apps | Web + Native Apps in C# |
+| **Unity (using .NET)** | Game Development | 2D/3D Games with C# |
+| **ML.NET** | Machine Learning | AI and ML-based Applications |
+| **Xamarin (Now MAUI)** | Mobile Apps | Android & iOS Apps using C# |
+| **Entity Framework Core** | ORM (Object-Relational Mapping) | Database Access for Applications |
+
+
 ### Evolution of the Runtime Platform
 -  **.NET Framework** → **.NET Core** → **.NET (Unified Platform)**
 -  The platform has undergone significant transformations, with new versions and features added over time.
