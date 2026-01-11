@@ -167,3 +167,186 @@ When the application runs, here's what happens in sequence:
 4.	The user clicks on "View Details" to see more information about a book.
 5.	The Details action in HomeController is called, retrieving the book by id and rendering the Details.cshtml view.
 
+## NOTE:
+- Action name(method name) and the view page regarding that should be of same name.
+- if method id Index(), view name should be View.cshtml.
+
+We can customize is as:
+```csharp
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        // Return a custom view named "CustomView.cshtml"
+        return View("CustomView");
+    }
+}
+```
+
+- Most of the routes are handled through controller/action(method name)
+ - Like `Home/Index`
+
+Altho, we can have custom routes,
+
+### 1. Using the Route Attribute (on Controller or Action)
+
+
+You can define custom routes using the [Route] attribute. This can be applied at the controller or action level to map specific URLs to specific actions.
+
+**Example:** Custom Route on Controller
+```csharp
+[Route("products")]
+public class ProductsController : Controller
+{
+    // Matches the URL /products
+    [Route("")]
+    public IActionResult Index()
+    {
+        return View();
+    }
+
+    // Matches the URL /products/details/1
+    [Route("details/{id}")]
+    public IActionResult Details(int id)
+    {
+        return View(id);
+    }
+}
+```
+
+In this example:
+- /products will map to Index action.
+- /products/details/{id} will map to Details action with id as a parameter.
+
+### 2. Using Custom Routes in Startup.cs (or Program.cs in newer versions)
+
+You can also configure custom routes in the Configure method of Startup.cs (or Program.cs in newer versions):
+
+```csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllerRoute(
+            name: "productDetails",
+            pattern: "products/details/{id}",
+            defaults: new { controller = "Products", action = "Details" });
+
+        // You can add more custom routes here
+    });
+}
+```
+
+---
+
+## Decoupled Architecture using ASP.NET and Modern Frontend Frameworks
+
+In a decoupled architecture, the backend serves as an API layer that provides data and business logic. The frontend consumes these APIs to render the user interface dynamically. This separation allows independent development and flexibility in choosing technologies.
+
+### Key Benefits:
+- **Separation of Concerns:** Frontend and backend teams can work independently.
+- **Flexibility:** Switch frontend frameworks without affecting backend functionality.
+- **Scalability:** Backend APIs can be reused across multiple frontend applications.
+- **Support for SPAs:** Enables Single Page Applications (SPA) that provide a dynamic and responsive user experience.
+
+### Example Implementation
+
+### 1. Backend (ASP.NET Core - HomeController)
+The backend provides a REST API endpoint to serve data as JSON. Here's an example controller:
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+public class HomeController : Controller
+{
+    [HttpGet("/api/custom-view")]
+    public IActionResult GetCustomViewData()
+    {
+        var data = new { message = "Hello from the backend!" };
+        return Ok(data);  // Return data as JSON
+    }
+}
+```
+
+### 2. Frontend Examples
+The frontend can be implemented using popular frameworks like Vue.js, Angular, or React. These frameworks fetch data from the backend API and update the UI dynamically.
+
+#### a. Vue.js Example
+
+```html
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: ""
+    };
+  },
+  created() {
+    fetch("/api/custom-view")
+      .then((response) => response.json())
+      .then((data) => {
+        this.message = data.message;
+      });
+  }
+};
+</script>
+```
+
+#### b. Angular Example
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-home',
+  template: `<h1>{{ message }}</h1>`,
+})
+export class HomeComponent implements OnInit {
+  message: string;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<any>('/api/custom-view').subscribe(data => {
+      this.message = data.message;
+    });
+  }
+}
+```
+
+#### c. React Example
+
+```javascript
+import React, { useState, useEffect } from "react";
+
+function Home() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    fetch("/api/custom-view")
+      .then((response) => response.json())
+      .then((data) => setMessage(data.message));
+  }, []);
+
+  return <h1>{message}</h1>;
+}
+
+export default Home;
+```
+
+## Architecture Flow
+
+### Flow Without Microservices
+1. **Frontend:** Sends HTTP requests to the backend API to fetch or send data.
+2. **Backend:** Processes requests, performs business logic, and interacts with the database.
+3. **API:** Acts as a mediator, exposing endpoints for frontend communication.
+
+### Flow With Microservices
+*Details will be updated soon.*
