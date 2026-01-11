@@ -45,7 +45,7 @@ Authorization → who I am
 ````
 
 **4. Authentication (via headers or cookies):**
-Authentication information can be sent either as:
+- Authentication information can be sent either as:
 
 🔹 JWT / Token-based (Stateless)
 ````yaml
