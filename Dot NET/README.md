@@ -88,9 +88,9 @@ ASP.NET is a web application framework developed by Microsoft to allow programme
 | **ASP.NET Core 8.0**         | 2023             | .NET 8.0 (LTS)                |
 
 ### NOTE:
-.NET Framework:	ASP.NET MVC & ASP.NET Web API = separate frameworks
-.NET Core:	ASP.NET Core = rebuilt single framework
-.NET 5+:	Same ASP.NET Core, unified
+- .NET Framework:	ASP.NET MVC & ASP.NET Web API = separate frameworks
+- .NET Core:	ASP.NET Core = rebuilt single framework
+- .NET 5+:	Same ASP.NET Core, unified
 
 
 ## Summary
