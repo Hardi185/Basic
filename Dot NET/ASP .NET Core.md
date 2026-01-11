@@ -21,7 +21,7 @@ MyProject/
 └─ MyProject.csproj
 ````
 
-### Starting Point:
+### 1. Starting Point for (.NET 5 style):
 ````yaml
 Program.cs (Main) --> builds Host --> Startup.cs (ConfigureServices & Configure) --> HTTP Pipeline starts
 ````
@@ -131,7 +131,9 @@ So yes: by calling this, you are essentially registering all your controllers (M
 ⚠️ If you only want API controllers, you can use services.AddControllers() instead.
 If you only want Razor Pages, use services.AddRazorPages().
 
-### ✅ Standard .NET 6 Project (ONLY Program.cs)
+----------
+
+### 2. ✅ Standard .NET 6 Project (ONLY Program.cs)
 📌 This is the ONLY file required in .NET 6.
 ````yaml
 using Microsoft.EntityFrameworkCore;
