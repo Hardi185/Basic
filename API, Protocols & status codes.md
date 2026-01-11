@@ -26,10 +26,10 @@ Takes request sends to server, takes the response sends to client.
 **1. HTTP Method:** GET, POST, PUT, PATCH, DELETE
 
 **2. Endpoint (URL):**
-``yaml
+````yaml
 /api/users
 /api/users/10
-``
+````
 
 **3. Headers:**
 ````yaml
