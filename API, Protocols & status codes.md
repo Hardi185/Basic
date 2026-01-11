@@ -97,7 +97,21 @@ Content-Type: application/json
   
   ✔ More resilient to failures.
 
-- The server processes this request without remembering past interactions.
+### How Stateful APIs word:
+````yaml
+1️⃣ User logs in
+2️⃣ Server issues JWT
+3️⃣ Client stores JWT (cookie or localStorage) // be mindful that here client saves it not server that's why it is stateless
+Authorization: Bearer <JWT>
+4️⃣ For every request:
+Client sends JWT
+Server validates JWT
+Request is authorized
+✔️ User stays logged in
+✔️ No server session stored
+✔️ Works until token expires
+````
+
 
 2️⃣ Stateful APIs
 
@@ -109,7 +123,7 @@ Content-Type: application/json
 - Example of a Stateful API (Session-Based Login)
 - The server responds with a session ID that must be used in future requests.
 
-### NOTE:
+### How Stateful APIs word:
 ````yaml
 Mostly JWT is stateless, but if JWT is being sent in Cookie then it is Stateful(not recommanded to pass JWT in Cookie).
 And Cookie(Session ID or JWT) will be saved in browser.
