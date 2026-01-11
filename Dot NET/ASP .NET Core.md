@@ -1,4 +1,4 @@
-# Project Structure:
+# Project Structure (Signle project approach):
 ````yaml
 MyProject/
 │
@@ -21,12 +21,12 @@ MyProject/
 └─ MyProject.csproj
 ````
 
-## Starting Point:
+### Starting Point:
 ````yaml
 Program.cs (Main) --> builds Host --> Startup.cs (ConfigureServices & Configure) --> HTTP Pipeline starts
 ````
 
-## Program.cs (.NET 5 style):
+### Program.cs (.NET 5 style):
 ````yaml
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -55,7 +55,7 @@ namespace MyProject
 - CreateHostBuilder() sets up the web host.
 - UseStartup<Startup>() tells ASP.NET Core to use Startup.cs for further configuration.
 
-## Startup.cs:
+### Startup.cs:
 ````yaml
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -130,3 +130,32 @@ So yes: by calling this, you are essentially registering all your controllers (M
 
 ⚠️ If you only want API controllers, you can use services.AddControllers() instead.
 If you only want Razor Pages, use services.AddRazorPages().
+
+
+### Controllers:
+MVC Controller Example:
+````yaml
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        ViewData["Message"] = "Hello from MVC!";
+        return View();
+    }
+}
+````
+
+API Controller Example:
+````yaml
+[ApiController]
+[Route("api/[controller]")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        var products = new List<string> { "Laptop", "Phone" };
+        return Ok(products); // Returns JSON
+    }
+}
+````
