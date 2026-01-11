@@ -23,15 +23,16 @@ Takes request sends to server, takes the response sends to client.
 ## What data is sent as request and what will return as response:
 
 ### API Request:
-**1. HTTP Method:** GET, POST, PUT, PATCH, DELETE
+**1. Protocol:** Http, Https, FTP and so on
+**2. HTTP Method:** GET, POST, PUT, PATCH, DELETE
 
-**2. Endpoint (URL):**
+**3. Endpoint (URL):**
 ````yaml
 /api/users
 /api/users/10
 ````
 
-**3. Headers:**
+**4. Headers:**
 ````yaml
 Content-Type: application/json
 Authorization: Bearer <token>
@@ -44,7 +45,7 @@ Accept → what I want back
 Authorization → who I am
 ````
 
-**4. Authentication (via headers or cookies):**
+**5. Authentication (via headers or cookies):**
 - Authentication information can be sent either as:
 
 🔹 JWT / Token-based (Stateless)
@@ -58,7 +59,7 @@ Cookie: JSESSIONID=abc123
 ````
 🔑 Cookies can also carry JWTs, in which case the API is still stateless.
 
-**5. Request Body (optional):**
+**6. Request Body (optional):**
 ```yaml
 {
   "name": "Nandini",
