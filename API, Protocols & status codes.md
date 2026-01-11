@@ -184,3 +184,7 @@ When an API responds to a request, it includes an HTTP status code to indicate t
 | **502** | Bad Gateway | Server received an invalid response from an upstream service. |
 | **503** | Service Unavailable | Server is temporarily unavailable (e.g., overloaded, maintenance). |
 | **504** | Gateway Timeout | Server didn’t receive a response from an upstream service in time. |
+
+-----------
+## How to Improve API perfomance:
+<img width="671" height="642" alt="image" src="https://github.com/user-attachments/assets/9d97f2ad-8df5-4ba2-b5ce-417c13c8d404" />
