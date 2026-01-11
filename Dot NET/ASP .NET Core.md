@@ -1,4 +1,27 @@
-# Starting Poing:
+# Project Structure:
+````yaml
+MyProject/
+│
+├─ Controllers/        # MVC & API controllers
+│   ├─ HomeController.cs
+│   └─ ProductController.cs
+│
+├─ Models/             # Data models
+│   └─ Product.cs
+│
+├─ Views/              # Razor views for MVC
+│   └─ Home/
+│       └─ Index.cshtml
+│
+├─ wwwroot/            # Static files (CSS, JS, images)
+│
+├─ appsettings.json    # Configuration
+├─ Program.cs          # App entry point
+├─ Startup.cs          # Configure services & middleware
+└─ MyProject.csproj
+````
+
+## Starting Point:
 ````yaml
 Program.cs (Main) --> builds Host --> Startup.cs (ConfigureServices & Configure) --> HTTP Pipeline starts
 ````
