@@ -16,9 +16,30 @@
 
 API (Application Programming Interface) is a set of rules and protocols that allow different software applications to communicate with each other. 
 ```yaml
-Think of it like a intermediate between client & server.
+Think of it like a intermediate between client/browser & server.
 Takes request sends to server, takes the response sends to client.
 ```
+````yaml
+[UI / Browser] 
+      |
+      | HTTP Request (GET / POST / etc.)
+      v
+[Server]
+  ├─ Routing / Controller
+  │      └─ Decides which method handles endpoint
+  ├─ Service / Business Logic
+  │      └─ Processes data, applies rules
+  └─ Repository / DB Layer
+         └─ Uses DB Config to query / update database
+      |
+      v
+[Database]  <-- stores persistent data
+      |
+      v
+[Server] 
+      └─ Returns response (JSON / HTML) to UI
+
+````
 
 ## What data is sent as request and what will return as response:
 
