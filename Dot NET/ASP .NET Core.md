@@ -1,4 +1,4 @@
-# Project Structure (Signle project approach):
+# Project Structure (Single project approach):
 ````yaml
 MyProject/
 │
@@ -55,7 +55,7 @@ namespace MyProject
 - CreateHostBuilder() sets up the web host.
 - UseStartup<Startup>() tells ASP.NET Core to use Startup.cs for further configuration.
 
-### Startup.cs:
+### Startup.cs (.NET 5 style):
 ````yaml
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -131,6 +131,57 @@ So yes: by calling this, you are essentially registering all your controllers (M
 ⚠️ If you only want API controllers, you can use services.AddControllers() instead.
 If you only want Razor Pages, use services.AddRazorPages().
 
+### ✅ Standard .NET 6 Project (ONLY Program.cs)
+📌 This is the ONLY file required in .NET 6.
+````yaml
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// --------------------
+// 1️⃣ Register Services (old ConfigureServices)
+// --------------------
+builder.Services.AddControllersWithViews(); // MVC + API
+builder.Services.AddRazorPages();
+
+// Example DI
+// builder.Services.AddDbContext<AppDbContext>(options =>
+//     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// builder.Services.AddScoped<IProductRepository, ProductRepository>();
+// builder.Services.AddScoped<IProductService, ProductService>();
+
+var app = builder.Build();
+
+// --------------------
+// 2️⃣ Configure Middleware (old Configure)
+// --------------------
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
+// --------------------
+// 3️⃣ Map Endpoints
+// --------------------
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllers();   // Web API
+app.MapRazorPages();    // Razor Pages
+
+// --------------------
+app.Run();
+````
 
 ### Controllers:
 MVC Controller Example:
