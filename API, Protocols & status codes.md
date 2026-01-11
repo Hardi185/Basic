@@ -20,7 +20,7 @@ Think of it like a intermediate between client & server.
 Takes request sends to server, takes the response sends to client.
 ```
 
-## What data is send as request and what will return as response:
+## What data is sent as request and what will return as response:
 
 ### API Request:
 **1. HTTP Method:** GET, POST, PUT, PATCH, DELETE
