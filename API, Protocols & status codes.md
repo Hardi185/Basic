@@ -52,7 +52,7 @@ Authorization → who I am
 Authorization: Bearer <JWT>
 ````
 
-🔹 Cookie-based (Usually Stateful)
+🔹 Cookie-based[session ID or JWT] (Usually Stateful)
 ````yaml
 Cookie: JSESSIONID=abc123
 ````
@@ -97,32 +97,41 @@ Content-Type: application/json
   
   ✔ More resilient to failures.
 
-- Example of a Stateless API (RESTful API Request)
-
-````yaml
-GET /user/123
-Authorization: Bearer <token>
-````
-
 - The server processes this request without remembering past interactions.
 
 2️⃣ Stateful APIs
 
 - The server stores client session data between requests.
+- SAME SESSION WILL BE USED UNTILL COOKIE EXPIRES.
 - The client must maintain the same session (e.g., cookies, session IDs).
 - Example: SOAP APIs (Simple Object Access Protocol) and WebSockets.
 - Use cases: Banking transactions, real-time applications, multi-step processes.
 - Example of a Stateful API (Session-Based Login)
-
-````yaml
-POST /login
-{
-  "username": "user123",
-  "password": "mypassword"
-}
-````
-
 - The server responds with a session ID that must be used in future requests.
+
+### NOTE:
+````yaml
+Mostly JWT is stateless, but if JWT is being sent in Cookie then it is Stateful(not recommanded to pass JWT in Cookie).
+And Cookie(Session ID or JWT) will be saved in browser.
+
+✔️ What is stored where:
+Cookie → stored in the browser
+Session → stored on the server
+Cookie contains → either a session ID or a JWT
+
+✅ How requests work (clean flow)
+1️⃣ Server sends:
+Set-Cookie: JSESSIONID=abc123
+2️⃣ Browser stores the cookie
+3️⃣ For every next request (until expiry):
+Cookie: JSESSIONID=abc123
+4️⃣ Server:
+Reads cookie
+Fetches session (or validates JWT)
+Processes request
+✔️ No extra login needed
+✔️ Requests work smoothly until expiry
+````
 
 
 ## Types of APIs
