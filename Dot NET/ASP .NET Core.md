@@ -184,7 +184,17 @@ app.MapRazorPages();    // Razor Pages
 // --------------------
 app.Run();
 ````
+## NOTE:
+````yaml
+appsettings.json contains data like db connection string and so on.
+When in .NET 5 Host.CreateDefaultBuilder() and in .NET 6 WebApplication.CreateBuilder(args) loads these configs includes:
+- appsettings.json
+- appsettings.Development.json
+- Env variables
+- CLI args
+````
 
+---------------
 ### Controllers:
 MVC Controller Example:
 ````yaml
@@ -212,3 +222,5 @@ public class ProductsController : ControllerBase
     }
 }
 ````
+----------------
+
