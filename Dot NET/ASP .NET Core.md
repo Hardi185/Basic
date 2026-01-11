@@ -104,5 +104,6 @@ namespace MyProject
 2.	Registers API controllers too (controllers with [ApiController] attribute that return JSON).This is why in a single project, you can have both API and Razor controllers.
 3.	Adds model binding, validation, routing, filters, etc.
 So yes: by calling this, you are essentially registering all your controllers (MVC + API) with the DI container.
+
 ⚠️ If you only want API controllers, you can use services.AddControllers() instead.
 If you only want Razor Pages, use services.AddRazorPages().
