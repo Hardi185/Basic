@@ -44,7 +44,21 @@ Accept → what I want back
 Authorization → who I am
 ````
 
-**4. Request Body (optional):**
+**4. Authentication (via headers or cookies):**
+Authentication information can be sent either as:
+
+🔹 JWT / Token-based (Stateless)
+````yaml
+Authorization: Bearer <JWT>
+````
+
+🔹 Cookie-based (Usually Stateful)
+````yaml
+Cookie: JSESSIONID=abc123
+````
+🔑 Cookies can also carry JWTs, in which case the API is still stateless.
+
+**5. Request Body (optional):**
 ```yaml
 {
   "name": "Nandini",
