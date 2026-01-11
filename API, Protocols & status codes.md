@@ -20,6 +20,53 @@ Think of it like a intermediate between client & server.
 Takes request sends to server, takes the response sends to client.
 ```
 
+## What data is send as request and what will return as response:
+
+### API Request:
+**1. HTTP Method:** GET, POST, PUT, PATCH, DELETE
+
+**2. Endpoint (URL):**
+``yaml
+/api/users
+/api/users/10
+``
+
+**3. Headers:**
+````yaml
+Content-Type: application/json
+Authorization: Bearer <token>
+Accept: application/json
+````
+you could say:
+````yaml
+Content-Type → what I send
+Accept → what I want back
+Authorization → who I am
+````
+
+**4. Request Body (optional):**
+```yaml
+{
+  "name": "Nandini",
+  "email": "nandini@gmail.com",
+  "role": "software_engineer"
+}
+````
+
+### API Reponse:
+- Code - meaning, Headers, Response body
+```yaml
+201 Created
+Content-Type: application/json
+{
+  "id": 10,
+  "name": "Nandini",
+  "email": "nandini@gmail.com"
+}
+````
+
+
+--------
 ## Stateless vs Stateful APIs
 - APIs can be either stateless or stateful, depending on how they manage client-server interactions.
 
