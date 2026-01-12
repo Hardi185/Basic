@@ -200,11 +200,20 @@ MVC Controller Example:
 ````yaml
 public class HomeController : Controller
 {
+
     public IActionResult Index()
     {
         ViewData["Message"] = "Hello from MVC!";
         return View();
     }
+
+}
+
+[Route("api/products")]
+public class ProductsController : ControllerBase
+{
+    [HttpGet("list")]
+    public IActionResult List() { }
 }
 ````
 
@@ -223,4 +232,9 @@ public class ProductsController : ControllerBase
 }
 ````
 ----------------
+
+## Routing:
+
+📌 How routing works in .NET 5 and above
+
 
