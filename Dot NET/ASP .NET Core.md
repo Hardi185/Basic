@@ -12,12 +12,12 @@
    - [MVC Routing](#3️⃣-routing-in-mvc-view-based)
    - [Web API Routing](#4️⃣-routing-in-web-api-data-based)
    - [MVC View Folder Structure](#-mvc-view-folder-structure)
-5. [Passing Data in ASP.NET Core](#passing-data-in-aspnet-core)
-   - [ViewData](#1️⃣-viewdata)
-   - [ViewBag](#2️⃣-viewbag)
-   - [TempData](#3️⃣-tempdata)
-   - [ViewModel](#4️⃣-viewmodel)
-   - [DTO (Data Transfer Object)](#5️⃣-dto-data-transfer-object)
+5. [Passing Data in ASP.NET Core](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md)
+   - [ViewData](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#1️⃣-viewdata)
+   - [ViewBag](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#2️⃣-viewbag)
+   - [TempData](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#3️⃣-tempdata)
+   - [ViewModel](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#4️⃣-viewmodel)
+   - [DTO (Data Transfer Object)](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#5️⃣-dto-data-transfer-object)
 
 
 ---
