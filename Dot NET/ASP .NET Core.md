@@ -14,7 +14,7 @@
 
 ## Project Architecture
 
-# Project Structure (Single project approach):
+### Project Structure (Single project approach):
 ```yaml
 MyProject/
 │
