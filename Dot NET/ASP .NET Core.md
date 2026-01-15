@@ -279,16 +279,12 @@ It decides which controller & action (or endpoint) should handle an incoming HTT
 ➡️ Action: `Details`  
 ➡️ Parameter: `id = 5`
 
----
-
 ### 2️⃣ Types of Routing in ASP.NET Core
 
 ASP.NET Core supports two routing styles (for BOTH MVC & Web API):
 
 1. **Conventional Routing**
 2. **Attribute Routing** ✅ (most common for Web API)
-
----
 
 ### 3️⃣ Routing in MVC (View-based)
 
@@ -344,8 +340,6 @@ public class ProductController : Controller
 
 ➡️ URL: `/products/list`
 
----
-
 ### 4️⃣ Routing in Web API (Data-based)
 
 Web API returns JSON / XML, not views.
@@ -397,7 +391,6 @@ public IActionResult Delete(int id) { }
 - URL
 - HTTP Method (GET, POST, PUT, DELETE)
 
----
 
 ### 5️⃣ Conventional Routing in Web API (Rare)
 
@@ -410,8 +403,6 @@ app.MapControllerRoute(
 
 ⚠️ This breaks RESTful standards.
 
----
-
 ### 6️⃣ Endpoint Routing (ASP.NET Core)
 
 Used internally by both MVC & Web API:
@@ -421,7 +412,6 @@ app.MapControllers();
 
 ❌ Without this, routing won't work!
 
----
 
 ### 7️⃣ Route Parameters & Constraints
 ```csharp
@@ -432,8 +422,6 @@ public IActionResult Get(int id)
 **Only matches:**
 - ✅ `/api/products/5`
 - ❌ `/api/products/abc`
-
----
 
 ### 📁 MVC View Folder Structure
 
@@ -491,8 +479,6 @@ Views/
 
 Unless you explicitly tell MVC where the view is.
 
----
-
 ### 🔄 Exceptions to Convention
 
 #### Exception 1️⃣: Using Shared Folder
@@ -540,8 +526,6 @@ Pages/
 ```
 
 ⚠️ This has NO controller at all
-
----
 
 ### 📊 MVC vs Razor Pages (Quick Difference)
 
