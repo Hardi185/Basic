@@ -1,5 +1,21 @@
+# ASP.NET Core Project Guide
+
+## 📑 Table of Contents
+1. [Project Architecture](#project-architecture)
+2. [Starting Point](#starting-point)
+   - [.NET 5 Style (Program.cs + Startup.cs)](#1-starting-point-for-net-5-style)
+   - [.NET 6+ Style (Program.cs Only)](#2--standard-net-6-project-only-programcs)
+3. [Controllers](#controllers)
+   - [MVC Controller Example](#mvc-controller-example)
+   - [API Controller Example](#api-controller-example)
+4. [Routing](#routing)
+
+---
+
+## Project Architecture
+
 # Project Structure (Single project approach):
-````yaml
+```yaml
 MyProject/
 │
 ├─ Controllers/        # MVC & API controllers
@@ -19,15 +35,19 @@ MyProject/
 ├─ Program.cs          # App entry point
 ├─ Startup.cs          # Configure services & middleware
 └─ MyProject.csproj
-````
+```
+
+---
+
+## Starting Point
 
 ### 1. Starting Point for (.NET 5 style):
-````yaml
+```yaml
 Program.cs (Main) --> builds Host --> Startup.cs (ConfigureServices & Configure) --> HTTP Pipeline starts
-````
+```
 
 ### Program.cs (.NET 5 style):
-````yaml
+```csharp
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -48,15 +68,16 @@ namespace MyProject
                 });
     }
 }
-````````
-✅ Explanation:
+```
 
-- Main() is the actual starting point of the app.
-- CreateHostBuilder() sets up the web host.
-- UseStartup<Startup>() tells ASP.NET Core to use Startup.cs for further configuration.
+✅ **Explanation:**
+
+- `Main()` is the actual starting point of the app.
+- `CreateHostBuilder()` sets up the web host.
+- `UseStartup<Startup>()` tells ASP.NET Core to use Startup.cs for further configuration.
 
 ### Startup.cs (.NET 5 style):
-````yaml
+```csharp
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -119,23 +140,28 @@ namespace MyProject
         }
     }
 }
-````
+```
 
-`services.AddControllersWithViews()` → MVC + API Contoller loading
--	AddControllersWithViews() does three things:
-1.	Registers all MVC controllers (controllers returning views) in your project.
-2.	Registers API controllers too (controllers with [ApiController] attribute that return JSON).This is why in a single project, you can have both API and Razor controllers.
-3.	Adds model binding, validation, routing, filters, etc.
+#### `services.AddControllersWithViews()` → MVC + API Controller loading
+
+**AddControllersWithViews() does three things:**
+
+1. Registers all MVC controllers (controllers returning views) in your project.
+2. Registers API controllers too (controllers with `[ApiController]` attribute that return JSON). This is why in a single project, you can have both API and Razor controllers.
+3. Adds model binding, validation, routing, filters, etc.
+
 So yes: by calling this, you are essentially registering all your controllers (MVC + API) with the DI container.
 
-⚠️ If you only want API controllers, you can use services.AddControllers() instead.
-If you only want Razor Pages, use services.AddRazorPages().
+⚠️ **Alternative options:**
+- If you only want API controllers, use `services.AddControllers()` instead.
+- If you only want Razor Pages, use `services.AddRazorPages()`.
 
-----------
+---
 
 ### 2. ✅ Standard .NET 6 Project (ONLY Program.cs)
+
 📌 This is the ONLY file required in .NET 6.
-````yaml
+```csharp
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -183,30 +209,31 @@ app.MapRazorPages();    // Razor Pages
 
 // --------------------
 app.Run();
-````
-## NOTE:
-````yaml
+```
+
+### 📝 NOTE:
+```yaml
 appsettings.json contains data like db connection string and so on.
 When in .NET 5 Host.CreateDefaultBuilder() and in .NET 6 WebApplication.CreateBuilder(args) loads these configs includes:
 - appsettings.json
 - appsettings.Development.json
 - Env variables
 - CLI args
-````
+```
 
----------------
-### Controllers:
-MVC Controller Example:
-````yaml
+---
+
+## Controllers
+
+### MVC Controller Example:
+```csharp
 public class HomeController : Controller
 {
-
     public IActionResult Index()
     {
         ViewData["Message"] = "Hello from MVC!";
         return View();
     }
-
 }
 
 [Route("api/products")]
@@ -215,10 +242,10 @@ public class ProductsController : ControllerBase
     [HttpGet("list")]
     public IActionResult List() { }
 }
-````
+```
 
-API Controller Example:
-````yaml
+### API Controller Example:
+```csharp
 [ApiController]
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
@@ -230,11 +257,10 @@ public class ProductsController : ControllerBase
         return Ok(products); // Returns JSON
     }
 }
-````
-----------------
+```
 
-## Routing:
+---
+
+## Routing
 
 📌 How routing works in .NET 5 and above
-
-
