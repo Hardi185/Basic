@@ -9,6 +9,10 @@
    - [MVC Controller Example](#mvc-controller-example)
    - [API Controller Example](#api-controller-example)
 4. [Routing](#routing)
+   - [MVC Routing](#3️⃣-routing-in-mvc-view-based)
+   - [Web API Routing](#4️⃣-routing-in-web-api-data-based)
+   - [MVC View Folder Structure](#-mvc-view-folder-structure)
+
 
 ---
 
