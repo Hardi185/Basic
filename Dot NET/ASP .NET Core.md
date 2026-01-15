@@ -12,6 +12,12 @@
    - [MVC Routing](#3️⃣-routing-in-mvc-view-based)
    - [Web API Routing](#4️⃣-routing-in-web-api-data-based)
    - [MVC View Folder Structure](#-mvc-view-folder-structure)
+5. [Passing Data in ASP.NET Core](#passing-data-in-aspnet-core)
+   - [ViewData](#1️⃣-viewdata)
+   - [ViewBag](#2️⃣-viewbag)
+   - [TempData](#3️⃣-tempdata)
+   - [ViewModel](#4️⃣-viewmodel)
+   - [DTO (Data Transfer Object)](#5️⃣-dto-data-transfer-object)
 
 
 ---
