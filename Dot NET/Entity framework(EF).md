@@ -1,8 +1,29 @@
 # Entity Framework (EF) Overview
 
-Entity Framework (EF) is an Object-Relational Mapper (ORM) for .NET applications. It simplifies data access by enabling developers to interact with databases using high-level objects instead of writing raw SQL queries. EF abstracts the database layer, allowing you to focus on application logic while it handles the database interactions.
+## 📑 Table of Contents
+
+- [Introduction](#introduction)
+- [Key Features of Entity Framework](#key-features-of-entity-framework)
+  - [1. Object-Relational Mapping (ORM)](#1-object-relational-mapping-orm)
+  - [2. Database-First, Code-First, and Model-First Approaches](#2-database-first-code-first-and-model-first-approaches)
+  - [3. LINQ Integration](#3-linq-integration)
+  - [4. Change Tracking](#4-change-tracking)
+  - [5. Migrations](#5-migrations)
+  - [6. Database Provider Support](#6-database-provider-support)
+- [Benefits of Entity Framework](#benefits-of-entity-framework)
+  - [1. Productivity](#1-productivity)
+  - [2. Maintainability](#2-maintainability)
+  - [3. Cross-Database Compatibility](#3-cross-database-compatibility)
+  - [4. Strongly Typed Queries](#4-strongly-typed-queries)
+  - [5. Ease of Use](#5-ease-of-use)
+- [How Entity Framework Works](#how-entity-framework-works)
+- [Approaches in Entity Framework](#approaches-in-entity-framework)
+  - [1. Database-First](#1-database-first)
+  - [2. Code-First](#2-code-first)
+  - [3. Model-First](#3-model-first)
 
 ---
+
 
 ## Key Features of Entity Framework
 
