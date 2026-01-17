@@ -13,11 +13,11 @@
    - [Web API Routing](#4️⃣-routing-in-web-api-data-based)
    - [MVC View Folder Structure](#-mvc-view-folder-structure)
 5. [Passing Data in ASP.NET Core](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md)
-   - [ViewData](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#1️⃣-viewdata)
-   - [ViewBag](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#2️⃣-viewbag)
-   - [TempData](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#3️⃣-tempdata)
-   - [ViewModel](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#4️⃣-viewmodel)
-   - [DTO (Data Transfer Object)](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#5️⃣-dto-data-transfer-object)
+   - ViewData
+   - ViewBag
+   - TempData
+   - ViewModel
+   - DTO (Data Transfer Object)
 6. [3 Dependency Injection (DI) lifetimes in ASP.NET Core](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/3%20Dependency%20Injection%20(DI)%20lifetimes%20in%20ASP.NET%20Core.md#%EF%B8%8F-important-rule-interview-favorite)
    - AddTransient
    - AddScoped
