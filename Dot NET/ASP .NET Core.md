@@ -33,7 +33,7 @@
    -  Entity Framework Transactions
    -  Version-wise Summary
    -  CommitAsync & RollbackAsync in .NET 6+
- 8. [ADO.NET vs Entity Framework](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/ADO.NET%20vs%20Entity%20Framework.md#2%EF%B8%8F%E2%83%A3-what-is-entity-framework-ef--ef-core)
+8. [ADO.NET vs Entity Framework](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/ADO.NET%20vs%20Entity%20Framework.md#2%EF%B8%8F%E2%83%A3-what-is-entity-framework-ef--ef-core)
     - What is ADO.NET?
     - What is Entity Framework?
     - Core Difference
@@ -45,6 +45,15 @@
     - Using Both Together
     - Interview Answer
     - Simple Analogy
+9. [Request Pipeline & Middleware](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Request%20Pipeline%20%26%20Middleware.md#4%EF%B8%8F%E2%83%A3-common-middleware--why-we-need-them)
+    - What is the Request Pipeline?
+    - Why Do We Need Middleware?
+    - High-Level Flow
+    - Common Middleware & Their Purpose
+    - Order Matters
+    - Short-Circuiting Example
+    - Interview Answer
+    - Mental Model
 
 
 ---
