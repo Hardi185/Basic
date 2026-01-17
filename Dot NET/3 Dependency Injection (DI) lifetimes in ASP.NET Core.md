@@ -1,6 +1,14 @@
 
 # Dependency Injection Lifetimes in ASP.NET Core
 
+## 📑 Table of Contents - Dependency Injection Lifetimes
+
+1. [AddTransient](#1️⃣-addtransient)
+2. [AddScoped](#2️⃣-addscoped)
+3. [AddSingleton](#3️⃣-addsingleton)
+4. [Quick Comparison Table](#-quick-interview-comparison-table)
+5. [Important DI Rules](#️-important-rule-interview-favorite)
+
 ## 1️⃣ AddTransient
 
 👉 **New instance every time it is requested**
