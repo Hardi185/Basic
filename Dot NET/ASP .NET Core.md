@@ -19,6 +19,11 @@
    - [ViewModel](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#4️⃣-viewmodel)
    - [DTO (Data Transfer Object)](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Passing%20Data%20in%20ASP.NET%20Core.md#5️⃣-dto-data-transfer-object)
 6. [3 Dependency Injection (DI) lifetimes in ASP.NET Core](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/3%20Dependency%20Injection%20(DI)%20lifetimes%20in%20ASP.NET%20Core.md#%EF%B8%8F-important-rule-interview-favorite)
+   - AddTransient
+   - AddScoped
+   - AddSingleton
+   - Quick Comparison Table
+   - Important DI Rules
 7. [Transactions & ACID properties](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Transactions%20%26%20ACID%20properties.md#do-we-actually-use-await-transactioncommitasync-and-await-transactionrollbackasync-after-net-6)
    -  What is a Transaction?
    -  Commit & Rollback
