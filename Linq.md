@@ -1,8 +1,31 @@
 # Basics of LINQ (Language-Integrated Query)
 
-LINQ (Language-Integrated Query) is a powerful feature in .NET that provides a consistent way to query various data sources, such as collections, databases, XML, and more, using a common syntax. It integrates query capabilities directly into C# and VB.NET languages.
+## 📑 Table of Contents
 
----
+- [Introduction](#introduction)
+- [Key Concepts](#key-concepts)
+- [LINQ Query Syntax](#linq-query-syntax)
+  - [1. Query Syntax](#1-query-syntax)
+  - [2. Method Syntax](#2-method-syntax)
+- [Common LINQ Methods](#common-linq-methods)
+- [Example: LINQ with a List](#example-linq-with-a-list)
+- [LINQ to SQL](#linq-to-sql)
+  - [Example](#example)
+- [LINQ to XML](#linq-to-xml)
+  - [Example](#example-1)
+- [LINQ to Entities](#linq-to-entities)
+  - [Example](#example-2)
+- [LINQ Joins in C#](#linq-joins-in-c)
+  - [1. Inner Join](#1-inner-join)
+  - [2. Left Outer Join](#2-left-outer-join)
+  - [3. Right Outer Join](#3-right-outer-join)
+  - [4. Full Outer Join](#4-full-outer-join)
+  - [5. Cross Join](#5-cross-join)
+  - [Summary of Joins in LINQ](#summary-of-joins-in-linq)
+- [Advantages of LINQ](#advantages-of-linq)
+
+----
+
 
 ## Key Concepts
 
