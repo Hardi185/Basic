@@ -123,8 +123,7 @@ Please refer this:
 
 ---
 
-## EF as ORM for .NET application:
+## For more interview questions referer this:
 
-Please refer this:
-[Entity framework](https://github.com/Hardi185/Basic/blob/main/Entity%20framework.md)
+
 
