@@ -1,14 +1,26 @@
 # ASP.NET Project Types – Architecture Overview
 
 ## 📑 Table of Contents
-1. [ASP.NET Core MVC (.NET Core / .NET 6+)](#apnet-core-mvc-net-core--net-6)
-2. [ASP.NET Core Web API (.NET Core / .NET 6+)](#2-aspnet-core-web-api-net-core--net-6)
-3. [ASP.NET MVC (.NET Framework 4.x)](#3-aspnet-mvc-net-framework-4x)
-4. [ASP.NET Web API (.NET Framework)](#4-aspnet-web-api-net-framework)
-5. [Quick Comparison](#-quick-comparison)
-6. [Recommendation](#-recommendation)
+
+- [Overview](#overview)
+- [1️⃣ ASP.NET Core MVC (.NET Core / .NET 6+)](#1️⃣-aspnet-core-mvc-net-core--net-6)
+  - [📁 Project Structure](#-project-structure)
+  - [🔑 Key Points](#-key-points)
+- [2️⃣ ASP.NET Core Web API (.NET Core / .NET 6+)](#2️⃣-aspnet-core-web-api-net-core--net-6)
+  - [📁 Project Structure](#-project-structure-1)
+  - [🔑 Key Points](#-key-points-1)
+- [3️⃣ ASP.NET MVC (.NET Framework 4.x)](#3️⃣-aspnet-mvc-net-framework-4x)
+  - [📁 Project Structure](#-project-structure-2)
+  - [🔑 Key Points](#-key-points-2)
+- [4️⃣ ASP.NET Web API (.NET Framework)](#4️⃣-aspnet-web-api-net-framework)
+  - [📁 Project Structure](#-project-structure-3)
+  - [🔑 Key Points](#-key-points-3)
+- [Comparison Table](#comparison-table)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
+
 
 ## 1️⃣ ASP.NET Core MVC (.NET Core / .NET 6+)
 
