@@ -28,6 +28,18 @@
    -  Entity Framework Transactions
    -  Version-wise Summary
    -  CommitAsync & RollbackAsync in .NET 6+
+ 8. [ADO.NET vs Entity Framework](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/ADO.NET%20vs%20Entity%20Framework.md#2%EF%B8%8F%E2%83%A3-what-is-entity-framework-ef--ef-core)
+    - What is ADO.NET?
+    - What is Entity Framework?
+    - Core Difference
+    - Architecture View
+    - Feature Comparison
+    - Performance Difference
+    - When to Use ADO.NET
+    - When to Use EF Core
+    - Using Both Together
+    - Interview Answer
+    - Simple Analogy
 
 
 ---
