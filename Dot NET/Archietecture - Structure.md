@@ -49,7 +49,7 @@ MyProject/
 │ ├─ js/
 │ └─ images/
 │
-├─ appsettings.json
+├─ appsettings.json # Configuration
 ├─ Program.cs ✅ Entry point
 ├─ Startup.cs ❌ (Merged into Program.cs in .NET 6+)
 └─ MyProject.csproj
@@ -119,16 +119,21 @@ MyProject/
 │ │ └─ Index.cshtml
 │ └─ Shared/
 │
-├─ Content/ ❌ (CSS)
-├─ Scripts/ ❌ (JS)
+├─ Content/  (CSS)
+├─ Scripts/  (JS)
+│
+├─ App_Data/                ✅ Server-side data storage
+│   ├─ MyDatabase.mdf
+│   └─ logs.txt
 │
 ├─ App_Start/
-│ ├─ RouteConfig.cs
-│ ├─ FilterConfig.cs
-│ └─ BundleConfig.cs
+│ ├─ RouteConfig.cs   ✅ MVC routing
+│ ├─ FilterConfig.cs  ✅ Global filters
+│ └─ BundleConfig.cs  ✅ CSS/JS bundling
 │
-├─ Global.asax ✅ Application entry
-├─ Web.config
+├─ packages.config          ✅ NuGet dependencies
+├─ Global.asax              ✅ Application entry point
+├─ Web.config               ✅ App & IIS configuration
 └─ MyProject.csproj
 ```
 
@@ -154,11 +159,16 @@ MyProject.Api/
 ├─ Models/
 │ └─ Product.cs
 │
-├─ App_Start/
-│ └─ WebApiConfig.cs
+├─ App_Data/                ✅ Optional but valid
+│   ├─ ApiDatabase.mdf
+│   └─ request_logs.txt
 │
-├─ Global.asax
-├─ Web.config
+├─ App_Start/
+│ └─ WebApiConfig.cs         ✅ API routing
+│
+├─ packages.config          ✅ NuGet dependencies
+├─ Global.asax              ✅ Application entry
+├─ Web.config               ✅ API configuration
 └─ MyProject.Api.csproj
 ```
 
