@@ -63,6 +63,45 @@
     - Short-Circuiting Example
     - Interview Answer
     - Mental Model
+10. [Linq](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Linq.md)
+    - Introduction
+    - Key Concepts
+    - LINQ Query Syntax
+         1. Query Syntax
+         2. Method Syntax
+    - Common LINQ Methods
+    - Example: LINQ with a List
+    - LINQ to SQL
+    - LINQ to XML
+    - LINQ to Entities
+    - LINQ Joins in C#
+         1. Inner Join
+         2. Left Outer Join
+         3. Right Outer Join
+         4. Full Outer Join
+         5. Cross Join
+    - Summary of Joins in LINQ
+    - Advantages of LINQ
+11. [Entity framework(EF)](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Entity%20framework(EF).md)
+    - Introduction
+    - Key Features of Entity Framework
+         1. Object-Relational Mapping (ORM)
+         2. Database-First, Code-First, and Model-First Approaches
+         3. LINQ Integration
+         4. Change Tracking
+         5. Migrations
+         6. Database Provider Support
+    - Benefits of Entity Framework
+         1. Productivity
+         2. Maintainability
+         3. Cross-Database Compatibility
+         4. Strongly Typed Queries
+         5. Ease of Use
+    - How Entity Framework Works
+    - Approaches in Entity Framework
+         1. Database-First
+         2. Code-First
+         3. Model-First
 
 
 ---
