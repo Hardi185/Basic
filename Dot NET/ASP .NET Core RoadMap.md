@@ -102,6 +102,7 @@
          1. Database-First
          2. Code-First
          3. Model-First
+12. [Async Await](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/async_await.md)
 
 
 ---
