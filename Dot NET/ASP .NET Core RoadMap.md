@@ -1,7 +1,7 @@
 # ASP.NET Core Project Guide
 
 ## 📑 Table of Contents
-1. [Project Architecture](#project-architecture)
+1. [Project Architecture]([#project-architecture](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Archietecture%20-%20Structure.md))
 2. [Starting Point](#starting-point)
    - [.NET 5 Style (Program.cs + Startup.cs)](#1-starting-point-for-net-5-style)
    - [.NET 6+ Style (Program.cs Only)](#2--standard-net-6-project-only-programcs)
@@ -64,33 +64,6 @@
     - Interview Answer
     - Mental Model
 
-
----
-
-## Project Architecture
-
-### Project Structure (Single project approach):
-```yaml
-MyProject/
-│
-├─ Controllers/        # MVC & API controllers
-│   ├─ HomeController.cs
-│   └─ ProductController.cs
-│
-├─ Models/             # Data models
-│   └─ Product.cs
-│
-├─ Views/              # Razor views for MVC
-│   └─ Home/
-│       └─ Index.cshtml
-│
-├─ wwwroot/            # Static files (CSS, JS, images)
-│
-├─ appsettings.json    # Configuration
-├─ Program.cs          # App entry point
-├─ Startup.cs          # Configure services & middleware
-└─ MyProject.csproj
-```
 
 ---
 
