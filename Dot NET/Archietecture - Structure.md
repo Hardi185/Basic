@@ -1,7 +1,7 @@
 # ASP.NET Project Types – Architecture Overview
 
 ## 📑 Table of Contents
-1. [ASP.NET Core MVC (.NET Core / .NET 6+)](#1-aspnet-core-mvc-net-core--net-6)
+1. [ASP.NET Core MVC (.NET Core / .NET 6+)](#apnet-core-mvc-net-core--net-6)
 2. [ASP.NET Core Web API (.NET Core / .NET 6+)](#2-aspnet-core-web-api-net-core--net-6)
 3. [ASP.NET MVC (.NET Framework 4.x)](#3-aspnet-mvc-net-framework-4x)
 4. [ASP.NET Web API (.NET Framework)](#4-aspnet-web-api-net-framework)
