@@ -24,6 +24,15 @@
    - AddSingleton
    - Quick Comparison Table
    - Important DI Rules
+   - IConfiguration in ASP.NET Core
+        - Is IConfiguration Default?
+        - Who Creates IConfiguration?
+        - Configuration Sources
+        - Where is IConfiguration Stored?
+        - How to Use IConfiguration
+        - Do We Create IConfiguration?
+        - Interview Answer
+        - Mental Model
 7. [Transactions & ACID properties](https://github.com/Hardi185/Basic/blob/main/Dot%20NET/Transactions%20%26%20ACID%20properties.md#do-we-actually-use-await-transactioncommitasync-and-await-transactionrollbackasync-after-net-6)
    -  What is a Transaction?
    -  Commit & Rollback
