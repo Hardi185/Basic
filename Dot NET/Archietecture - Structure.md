@@ -14,9 +14,6 @@
 - [4️⃣ ASP.NET Web API (.NET Framework)](#4️⃣-aspnet-web-api-net-framework)
   - [📁 Project Structure](#-project-structure-3)
   - [🔑 Key Points](#-key-points-3)
-- [Comparison Table](#comparison-table)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
