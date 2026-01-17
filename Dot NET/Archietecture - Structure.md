@@ -2,7 +2,6 @@
 
 ## 📑 Table of Contents
 
-- [Overview](#overview)
 - [1️⃣ ASP.NET Core MVC (.NET Core / .NET 6+)](#1️⃣-aspnet-core-mvc-net-core--net-6)
   - [📁 Project Structure](#-project-structure)
   - [🔑 Key Points](#-key-points)
